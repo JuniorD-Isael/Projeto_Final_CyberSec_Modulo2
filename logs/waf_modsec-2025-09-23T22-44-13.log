@@ -1,0 +1,58 @@
+2025-09-23T22:43:54.165382834Z /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+2025-09-23T22:43:54.165420076Z /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+2025-09-23T22:43:54.166656985Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/01-check-low-port.sh
+2025-09-23T22:43:54.168741159Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-generate-certificate.sh
+2025-09-23T22:43:54.170604753Z /usr/local/bin/generate-certificate: generating new certificate
+2025-09-23T22:43:54.192133564Z Warning: Not placing -key in cert or request since request is used
+2025-09-23T22:43:54.195191373Z Warning: No -copy_extensions given; ignoring any extensions in the request
+2025-09-23T22:43:54.197193944Z /usr/local/bin/generate-certificate: generated /etc/nginx/conf/server.key and /etc/nginx/conf/server.crt
+2025-09-23T22:43:54.197546591Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+2025-09-23T22:43:54.200666964Z 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+2025-09-23T22:43:54.213030278Z 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+2025-09-23T22:43:54.213249416Z /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+2025-09-23T22:43:54.213409636Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+2025-09-23T22:43:54.218944832Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/modsecurity.d/modsecurity.conf.template to /etc/nginx/modsecurity.d/modsecurity.conf
+2025-09-23T22:43:54.221640449Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/modsecurity.d/modsecurity-override.conf.template to /etc/nginx/modsecurity.d/modsecurity-override.conf
+2025-09-23T22:43:54.224110111Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/modsecurity.d/setup.conf.template to /etc/nginx/modsecurity.d/setup.conf
+2025-09-23T22:43:54.226602225Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/conf.d/default.conf.template to /etc/nginx/conf.d/default.conf
+2025-09-23T22:43:54.229924883Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/conf.d/logging.conf.template to /etc/nginx/conf.d/logging.conf
+2025-09-23T22:43:54.235417737Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/conf.d/modsecurity.conf.template to /etc/nginx/conf.d/modsecurity.conf
+2025-09-23T22:43:54.239104021Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/includes/cors.conf.template to /etc/nginx/includes/cors.conf
+2025-09-23T22:43:54.242027570Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/includes/location_common.conf.template to /etc/nginx/includes/location_common.conf
+2025-09-23T22:43:54.244440163Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/includes/proxy_backend.conf.template to /etc/nginx/includes/proxy_backend.conf
+2025-09-23T22:43:54.246699793Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/includes/proxy_backend_ssl.conf.template to /etc/nginx/includes/proxy_backend_ssl.conf
+2025-09-23T22:43:54.252069551Z 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/nginx.conf.template to /etc/nginx/nginx.conf
+2025-09-23T22:43:54.255281951Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+2025-09-23T22:43:54.257175341Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/90-copy-modsecurity-config.sh
+2025-09-23T22:43:54.262637228Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/91-update-resolver.sh
+2025-09-23T22:43:54.276255078Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/92-update-real_ip.sh
+2025-09-23T22:43:54.280666765Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/93-update-proxy-ssl-config.sh
+2025-09-23T22:43:54.283179049Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/94-activate-plugins.sh
+2025-09-23T22:43:54.284298500Z # # #
+2025-09-23T22:43:54.284331195Z Running CRS plugin activation
+2025-09-23T22:43:54.284341632Z - - -
+2025-09-23T22:43:54.284348451Z 
+2025-09-23T22:43:54.292078310Z - - -
+2025-09-23T22:43:54.292099166Z Finished CRS plugin activation
+2025-09-23T22:43:54.292104052Z # # #
+2025-09-23T22:43:54.292108301Z 
+2025-09-23T22:43:54.292439460Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/95-configure-rules.sh
+2025-09-23T22:43:54.292931372Z # # #
+2025-09-23T22:43:54.292951117Z Running CRS rule configuration
+2025-09-23T22:43:54.292959813Z - - -
+2025-09-23T22:43:54.296036097Z Detected CRS config file version: v4
+2025-09-23T22:43:54.327068114Z Configuring 900000 for BLOCKING_PARANOIA with blocking_paranoia_level=1
+2025-09-23T22:43:54.378778403Z Configuring 900001 for DETECTION_PARANOIA with detection_paranoia_level=1
+2025-09-23T22:43:54.404645376Z Configuring 900110 for ANOMALY_INBOUND with inbound_anomaly_score_threshold=5
+2025-09-23T22:43:54.421568009Z Configuring 900110 for ANOMALY_OUTBOUND with outbound_anomaly_score_threshold=4
+2025-09-23T22:43:54.550738590Z - - -
+2025-09-23T22:43:54.550763987Z Finished CRS rule configuration
+2025-09-23T22:43:54.550772964Z # # #
+2025-09-23T22:43:54.550779622Z 
+2025-09-23T22:43:54.550984234Z /docker-entrypoint.sh: Ignoring /docker-entrypoint.d/configure-rules.v3.conf
+2025-09-23T22:43:54.551057660Z /docker-entrypoint.sh: Ignoring /docker-entrypoint.d/configure-rules.v4.conf
+2025-09-23T22:43:54.551272795Z /docker-entrypoint.sh: Configuration complete; ready for start up
+2025-09-23T22:43:54.841766600Z 2025/09/23 22:43:54 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/conf/server.crt"
+2025-09-23T22:43:54.841793209Z nginx: [warn] "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/conf/server.crt"
+2025-09-23T22:43:54.841895359Z 2025/09/23 22:43:54 [notice] 1#1: ModSecurity-nginx v1.0.4 (rules loaded inline/local/remote: 0/836/0)
+2025-09-23T22:43:54.841926170Z 2025/09/23 22:43:54 [notice] 1#1: libmodsecurity3 version 3.0.14
