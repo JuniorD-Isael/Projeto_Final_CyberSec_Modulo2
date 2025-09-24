@@ -24,21 +24,20 @@ O objetivo principal deste exercício foi avaliar e demonstrar a eficácia de um
 ## 3. Arquitetura (Diagrama)
 A arquitetura do laboratório foi projetada para simular um fluxo de tráfego realista, onde todo o acesso à aplicação web é mediado pelo WAF.
 
-```mermaid
-flowchart LR
-  Attacker[Kali Linux] --> | Ataques HTTP (porta 8080) | WAF["ModSecurity+CRS"]
-  WAF -- Bloqueia Ameaça --> Attacker
-  WAF -- Permite Tráfego Legítimo --> DVWA[(Aplicação DVWA)]
-  BlueTeam[Analista] -- Monitora Logs --> Dozzle[Dozzle UI]
-  Dozzle -- Lê Logs --> WAF
-```
+![Arquitetura do Laboratório WAF](Mermaid.png)
 
-- **Descrição do Fluxo:**
-    1. O container `Attacker` (Kali) envia requisições HTTP maliciosas para o endereço do `WAF` na porta 8080.
-    2. O `WAF` (ModSecurity) inspeciona cada requisição.
-    3. Se uma assinatura de ataque (ex: SQLi) é detectada, o WAF bloqueia a requisição e retorna um erro `403 Forbidden` ao atacante.
-    4. Se a requisição é considerada segura, ela é encaminhada para a aplicação `DVWA`.
-    5. Todas as decisões de segurança são registradas pelo WAF e visualizadas em tempo real pelo `BlueTeam` através da interface do `Dozzle`.
+**Componentes da Arquitetura:**
+- **Kali Linux** (192.168.35.11): Container atacante com ferramentas de pentest  
+- **ModSecurity+CRS** (192.168.35.30:8080): WAF com OWASP Core Rule Set v4.18.0
+- **DVWA** (192.168.35.40:80): Aplicação web vulnerável (backend protegido)
+- **Dozzle** (192.168.35.50:9999): Interface de monitoramento de logs em tempo real
+
+**Fluxo de Segurança:**
+1. **Ataques HTTP:** Kali envia requisições maliciosas (SQLi/XSS) para WAF:8080
+2. **Inspeção CRS:** ModSecurity analisa cada request com regras OWASP  
+3. **Decisão de Bloqueio:** DetectionOnly (HTTP 302) vs Blocking (HTTP 403)
+4. **Proxy Reverso:** Tráfego legítimo é encaminhado para DVWA:80
+5. **Monitoramento:** Logs JSON estruturados visualizados via Dozzle em tempo real
 
 ## 4. Metodologia
 A execução seguiu uma abordagem metódica para validar a funcionalidade do WAF em diferentes modos de operação.
