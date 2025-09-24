@@ -263,12 +263,5 @@ A equipe demonstrou capacidade avançada de:
 - Operar ferramentas de monitoramento e detecção
 - Documentar procedimentos técnicos detalhados
 
-### **Próximos Passos Recomendados:**
-1. **Implementação em Produção:** Deploy do WAF em ambiente produtivo com as configurações validadas
-2. **Tuning Avançado:** Elevação gradual do nível de paranoia para 2-3 após período de observação
-3. **Integração SIEM:** Conectar logs WAF a plataforma de correlação de eventos
-4. **Automação:** Desenvolvimento de playbooks automatizados para resposta a incidentes
-5. **Testes Avançados:** Avaliar eficácia contra técnicas de evasão e payloads ofuscados
-
 ### **Impacto Organizacional:**
 O projeto estabelece uma base sólida para o programa de segurança defensiva da organização, provendo tanto capacidades técnicas quanto processuais para proteção proativa contra ameaças web modernas. A documentação produzida serve como blueprint para implementações futuras e treinamento de equipes.
