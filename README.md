@@ -26,7 +26,7 @@ A arquitetura do laboratório foi projetada para simular um fluxo de tráfego re
 
 ```mermaid
 flowchart LR
-  Attacker[Kali Linux] -->|Ataques HTTP (porta 8080)| WAF[ModSecurity+CRS]
+  Attacker[Kali Linux] --> | Ataques HTTP (porta 8080) | WAF["ModSecurity+CRS"]
   WAF -- Bloqueia Ameaça --> Attacker
   WAF -- Permite Tráfego Legítimo --> DVWA[(Aplicação DVWA)]
   BlueTeam[Analista] -- Monitora Logs --> Dozzle[Dozzle UI]
